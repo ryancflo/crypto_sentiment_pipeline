@@ -20,7 +20,7 @@ The pipeline infrastructure is built using popular, open-source projects.
 <!-- ARCHITECTURE DIAGRAM -->
 ## Architecture diagram
 
-![Pipeline Architecture](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/projarchitecture.jpeg)
+![Pipeline Architecture](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/projarchitecture.jpeg)
 
 <!-- HOW IT WORKS -->
 ## How it works
@@ -41,7 +41,7 @@ It runs periodically every X minutes producing micro-batches.
 `data_quality`: A simple data quality check for nulls and emptiness.\
 `final_load`: Cleaned and transformed data in processed staging tables are inserted into coinmarketcap final tables.
 
-![CoinMarketCap DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/coinmarketcap_dag.PNG)
+![CoinMarketCap DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/coinmarketcap_dag.PNG)
 
 ##### Reddit DAG
  - Id: `reddit_dag`
@@ -55,7 +55,7 @@ It runs periodically every X minutes producing micro-batches.
 `loadReddit_toSnowflakeFinalTables`: Cleaned and transformed data in raw staging tables are inserted into reddit final tables.
 
 
-![Reddit DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/reddit_dag.PNG)
+![Reddit DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/reddit_dag.PNG)
 
 ##### Twitter DAG
  - Id: `twitter_dag`
@@ -68,21 +68,21 @@ It runs periodically every X minutes producing micro-batches.
 `data_quality`: A simple data quality check for nulls and emptiness.\
 `final_load`: Cleaned and transformed data in raw staging tables are inserted into twitter final tables.
 
-![Twitter DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/twitter_dag.PNG)
+![Twitter DAG](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/twitter_dag.PNG)
 
 
 #### Data Schema
 
-![Staging Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/staging_tables.PNG)
+![Staging Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/staging_tables.PNG)
 
-![Final Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/final_tables.png)
+![Final Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/final_tables.png)
 
 
 ## Dashboards
 
 #### Twitter Dashboard
 
-![Staging Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/master/images/twitter_dashboard.PNG)
+![Staging Schema](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/twitter_dashboard.PNG)
 
 
 
