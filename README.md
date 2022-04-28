@@ -5,6 +5,16 @@
 **Crypto Sentiment Pipeline** is an implementation of the data pipeline which consumes the latest data from coinmarketcap and post data from twitter and reddit. Consolidating all data into a centralized data store for sentiment analysis.
 The pipeline infrastructure is built using popular, open-source projects.
 
+## Tools & Technologies
+
+- Containerization - [**Docker**](https://www.docker.com), [**Docker Compose**](https://docs.docker.com/compose/)
+- Stream Processing - [**Kafka**](https://kafka.apache.org), [**Structured Streaming**](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
+- Orchestration & Batch Transformation - [**Airflow**](https://airflow.apache.org)
+- Data Lake - [**Azure Data Lake**](https://azure.microsoft.com/en-us/solutions/data-lake/)
+- Data Warehouse - [**Snowflake**](https://www.snowflake.com/)
+- Data Visualization - [**Power BI**](https://powerbi.microsoft.com)
+- Language - [**Python**](https://www.python.org)
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
@@ -21,6 +31,21 @@ The pipeline infrastructure is built using popular, open-source projects.
 ## Architecture diagram
 
 ![Pipeline Architecture](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/projarchitecture.jpeg)
+
+### Setup
+
+### Airflow Connections
+
+Setup your airflow connections 
+
+| Service | Conn ID | Conn Type | Other fields |
+| ------- | ------- | --------- | ------------------ |
+| Snowflake | `snowflake_conn_id` | `Snowflake` | Fill out your Snowflake database credentials |
+| Azure Blob Storage | `azure_conn_id` | `Azure Blob Storage` | Fill out your Azure container credentials |
+| Twitter API V2 (Tweepy)| `twitter_conn_id` | `HTTP` | Extras: {'BEARER_TOKEN' : YOUR_BEARER_TOKEN} |
+| Reddit API | `reddit_conn_id` | `HTTP` | {'CLIENT_ID' : YOUR_CLIENT_ID, 'CLIENT_SECRET' : YOUR_CLIENT_SECRET} |
+| Coinmarketcap API | `coinmarketcap_conn_id` | `HTTP` |  Extras: {'API_KEY' : YOUR_API_KEY}|
+
 
 <!-- HOW IT WORKS -->
 ## How it works
