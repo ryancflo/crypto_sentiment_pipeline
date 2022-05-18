@@ -19,6 +19,9 @@ The pipeline infrastructure is built using popular, open-source projects.
 ## Table of Contents
 
 * [Architecture diagram](#architecture-diagram)
+* [Project Structure](#project-structure)
+* [Setup](#setup)
+    * [Airflow Connections](airflow-connections)
 * [How it works](#how-it-works)
     * [Data Flow-Airflow Dags](#data-flow)
     * [Data Schema](#data-schema)
@@ -32,6 +35,56 @@ The pipeline infrastructure is built using popular, open-source projects.
 
 ![Pipeline Architecture](https://github.com/ryancflo/crypto_sentiment_pipeline/blob/main/images/projarchitecture.jpeg)
 
+
+<!-- PROJECT STRUCTURE -->
+## Project Structure
+
+```
+Airflow
+|____config
+| |____airflow.cfg                    # Set up customized Kafka topic
+|
+|____dags
+| |____binance_dag.py                    # Set up customized Kafka topic
+| |____coinmarketcap_dag.py
+| |____reddit_dag.py
+| |____twitter_dag.py
+|
+|____docker
+| |____Dockerfile
+|
+|____plugins
+| |____custom_hooks                                     # Result logs
+| | |____binance_hook.py
+| | |____coinmarketcap_hook.py
+| | |____reddit_hook.py
+| | |____twitter_hook.py
+| |  
+| |____custom_operators                                 # Result logs
+| | |____binance_toAzureDataLake.py
+| | |____coinmarketcap_toAzureDataLake.py
+| | |____data_quality.py
+| | |____reddit_toAzureDataLake.py
+| | |____twitter_toAzureDataLake.py
+| |
+| |____custom_scripts 
+| | |____vaderSentiment.py
+| |
+| |____custom_transfers                                 # Result logs
+| | |____azureDataLake_toSnowflake.py
+| | |____load_toSnowflakeTables.py
+| |
+| |____helpers                                          # Result logs
+| | |____sql_queries.py
+|
+|____docker-compose.yml 
+|
+|____screenshots                                        # Application working screenshots
+| |____screenshot 2.jpg
+| |____screenshot 1.jpg
+```
+
+<!-- SETUP -->
 ### Setup
 
 ### Airflow Connections

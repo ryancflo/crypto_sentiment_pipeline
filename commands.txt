@@ -1,0 +1,5 @@
+docker-compose up --build
+
+docker-compose rm -v
+
+docker exec -ti broker kafka-topics --list --bootstrap-server broker:29092
