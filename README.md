@@ -42,46 +42,43 @@ The pipeline infrastructure is built using popular, open-source projects.
 ```
 Airflow
 |____config
-| |____airflow.cfg                    # Set up customized Kafka topic
+| |____airflow.cfg                                      # Config file
 |
 |____dags
-| |____binance_dag.py                    # Set up customized Kafka topic
+| |____binance_dag.py                                   # Dag folder
 | |____coinmarketcap_dag.py
 | |____reddit_dag.py
 | |____twitter_dag.py
 |
-|____docker
+|____docker                                             # Docker build instructions
 | |____Dockerfile
 |
 |____plugins
-| |____custom_hooks                                     # Result logs
+| |____custom_hooks                                     # Custom Hooks to connect with APIs
 | | |____binance_hook.py
 | | |____coinmarketcap_hook.py
 | | |____reddit_hook.py
 | | |____twitter_hook.py
 | |  
-| |____custom_operators                                 # Result logs
+| |____custom_operators                                 # Custom operators to build dags
 | | |____binance_toAzureDataLake.py
 | | |____coinmarketcap_toAzureDataLake.py
 | | |____data_quality.py
 | | |____reddit_toAzureDataLake.py
 | | |____twitter_toAzureDataLake.py
 | |
-| |____custom_scripts 
+| |____custom_scripts                                   # Vadersentiment script for sentiment analysis
 | | |____vaderSentiment.py
 | |
-| |____custom_transfers                                 # Result logs
+| |____custom_transfers                                 # Custom transfers to build dags
 | | |____azureDataLake_toSnowflake.py
 | | |____load_toSnowflakeTables.py
 | |
-| |____helpers                                          # Result logs
+| |____helpers                                          # SQL scripts to build data warehouse
 | | |____sql_queries.py
 |
 |____docker-compose.yml 
 |
-|____screenshots                                        # Application working screenshots
-| |____screenshot 2.jpg
-| |____screenshot 1.jpg
 ```
 
 <!-- SETUP -->
